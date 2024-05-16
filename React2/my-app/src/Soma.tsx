@@ -1,35 +1,105 @@
 import React, { useState } from 'react';
-/*
-    1 - Um compone  DEVE ser nomeado com a primeira letra maiuscula EX: (App)
-    2 - Um componente DEVE ser uma Funcao EX: function, mas pode ser implementado como uma classe...
-    3 - Um componente DEVE retornar apenas um elemento pai HTML EX: <div></div>
-    4 - O componente DEVE ser exportado EX: (export default App;)
-    5 - 
-*/
 
 function Soma() {
-    
-    //Declaracao de Variavel 
-    const [contador, setContador] = useState(0);
+    const [number1, setNumber1] = useState('');
+    const [number2, setNumber2] = useState('');
+    const [resultado, setResultado] = useState('');
 
-    function clicar(){
-        setContador(contador + 1);
-        console.log(contador);
-    }
+    const handleCalculate = () => {
+        const num1 = parseFloat(number1);
+        const num2 = parseFloat(number2);
+
+        const sum = isNaN(num1) || isNaN(num2) ? 'Por favor, insira números válidos.' : `O resultado da soma é: ${num1 + num2}`;
+        setResultado(sum);
+    };
 
     return (
-    <div>
-        <br></br>
-            <label htmlFor="">Caixa 1: </label>
-            <input type="text" />
-            <br></br>
-            <label htmlFor="">Caixa 2: </label>
-            <input type="text" />
-            <br></br>
-            <br></br>
-            <button onClick={clicar}>Calcular</button>
-    </div>
+        <div>
+            <h1>Soma de dois numeros: </h1>
+            <br />
+            <label htmlFor="number1">Número 1:</label>
+            <input 
+                type="number" 
+                id="number1" 
+                value={number1} 
+                onChange={(e) => setNumber1(e.target.value)} 
+            />
+            <br />
+            <label htmlFor="number2">Número 2:</label>
+            <input 
+                type="number" 
+                id="number2" 
+                value={number2} 
+                onChange={(e) => setNumber2(e.target.value)} 
+            />
+            <br />
+            <button onClick={handleCalculate}>Calcular</button>
+            <br />
+            <textarea 
+                value={resultado} 
+                readOnly  
+                style={{ marginTop: '30px' }} 
+            />
+        </div>
     );
 }
 
-export default Soma;//Nome do arquivo
+export default Soma;
+/**
+ * import React, { useState } from 'react';
+
+function Soma() {
+    const [number1, setNumber1] = useState('');
+    const [number2, setNumber2] = useState('');
+    const [resultado, setResultado] = useState('');
+
+    const handleCalculate = () => {
+        const num1 = parseFloat(number1);
+        const num2 = parseFloat(number2);
+
+        const sum = isNaN(num1) || isNaN(num2) ? 'Por favor, insira números válidos.' : `O resultado da soma é: ${num1 + num2}`;
+        setResultado(sum);
+    };
+
+    return (
+        <div>
+            <label htmlFor="number1">Número 1:</label>
+            <input 
+                type="number" 
+                id="number1" 
+                value={number1} 
+                onChange={(e) => setNumber1(e.target.value)} 
+            />
+            <br />
+            <label htmlFor="number2">Número 2:</label>
+            <input 
+                type="number" 
+                id="number2" 
+                value={number2} 
+                onChange={(e) => setNumber2(e.target.value)} 
+            />
+            <br />
+            <button onClick={handleCalculate}>Calcular</button>
+            <br />
+            {resultado && (
+                <div 
+                    style={{
+                        marginTop: '10px',
+                        border: '1px solid #ccc',
+                        padding: '10px',
+                        borderRadius: '4px',
+                        width: '300px',
+                        minHeight: '50px',
+                        textAlign: 'center'
+                    }}
+                >
+                    {resultado}
+                </div>
+            )}
+        </div>
+    );
+}
+
+export default Soma;
+
+ */

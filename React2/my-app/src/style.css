@@ -1,7 +1,9 @@
 *{
     background-color: rgb(26, 25, 25);
     color: var(--secundary-color);
-
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
 }
 
 h1{
@@ -15,6 +17,13 @@ h1{
 }
 
 input{
+    border: 1px solid var(--secundary-color);
+    border-radius: 5px;
+}
+
+textarea {
+    width: 250px; /* Defina a largura desejada */
+    height: 60px; /* Defina a altura desejada */
     border: 1px solid var(--secundary-color);
     border-radius: 5px;
 }
