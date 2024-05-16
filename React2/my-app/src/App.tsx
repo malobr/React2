@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Soma from './Soma';
+/*
+  1 - Um compone  DEVE ser nomeado com a primeira letra maiuscula EX: (App)
+  2 - Um componente DEVE ser uma Funcao EX: function, mas pode ser implementado como uma classe...
+  3 - Um componente DEVE retornar apenas um elemento pai HTML EX: <div></div>
+  4 - O componente DEVE ser exportado EX: (export default App;)
+  5 - 
+*/
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Soma />
     </div>
   );
 }
